@@ -1,0 +1,9 @@
+<div *ngIf="cocktail">
+
+  <h2>{{cocktail.strDrink | uppercase}} Details</h2>
+  <div><span>id: </span>{{cocktail.idDrink}}</div>
+  <div><span>name: </span>{{cocktail.strDrink}}</div>
+
+  <button (click)="goBack()">Volver</button>
+
+</div>

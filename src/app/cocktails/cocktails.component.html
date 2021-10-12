@@ -1,0 +1,21 @@
+
+
+<!-- crear un form --> 
+
+        <app-option-button (optionButtonValueChange)="onSearchTypeChange($event)" [options]="searchTypes" [selectedOption]="searchType"></app-option-button>
+        <mat-form-field class="example-form-field" appearance="fill">
+          <mat-label>Search cocktails</mat-label>
+          <input matInput [(ngModel)]="searchValue" [disabled]="selectedAlcoholicFilter !== 'All' || selectedCategory !== 'All'" type="text" (keyup)="onSearchChange()">
+        </mat-form-field>
+
+        <mat-divider></mat-divider>
+        
+        <app-option-select (optionSelectValueChange)="categoryFilterChange($event)" [title]="'category'" [selectedOption]="selectedCategory" [options]="categoriesFilter"></app-option-select>
+        <app-option-select (optionSelectValueChange)="alcoholicFilterChange($event)" [title]="'type of drink'" [selectedOption]="selectedAlcoholicFilter" [options]="alcoholicFilter"></app-option-select>
+
+
+
+
+<mat-divider></mat-divider>
+
+<app-list-item [items]="cocktails"></app-list-item>
