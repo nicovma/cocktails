@@ -10,6 +10,7 @@ export class OptionSelectComponent implements OnInit {
   @Input() options: string[] = [];
   @Input() selectedOption: string = '';
   @Input() title: string = '';
+  @Input() disabled: boolean = false;
   @Output() optionSelectValueChange = new EventEmitter<string>();
 
   constructor() { }

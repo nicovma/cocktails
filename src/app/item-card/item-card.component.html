@@ -1,18 +1,8 @@
 <mat-card class="example-card" *ngIf="cocktail" [routerLink]="['/detail', cocktail.idDrink]">
-    <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>{{cocktail.strDrink}}</mat-card-title>
-        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-        <p>
-            {{cocktail.strDrink}}
-        </p>
-    </mat-card-content>
-    <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-    </mat-card-actions>
-</mat-card>
+    <mat-card-title-group>
+      <img mat-card-md-image src={{cocktail.strDrinkThumb}} >
+      <mat-card-title>{{cocktail.strDrink}}</mat-card-title>
+      <mat-card-subtitle>Medium</mat-card-subtitle>
+    </mat-card-title-group>
+  </mat-card>
 

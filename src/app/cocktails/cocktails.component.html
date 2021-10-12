@@ -1,6 +1,18 @@
+<div class="layout"
+  gdAreas="side content"
+  gdGap="8px"
+  gdRows="auto"
+  gdAreas.lt-md="side | content"
+  gdRows.lt-md="auto auto"
+  >
+  <div class="side" gdArea="side">
+    <app-search-form [searchTypes]="searchTypes" [searchType]="searchType" [categoriesFilter]="categoriesFilter" [selectedCategory]="selectedCategory" [alcoholicFilter]="alcoholicFilter" [selectedAlcoholicFilter]="selectedAlcoholicFilter" (optionButtonValueChange)="onSearchTypeChange($event)" (searchValueChange)="onSearchChange($event)" (alcoholicSelectValueChange)="alcoholicFilterChange($event)" (categorySelectValueChange)="categoryFilterChange($event)" (isFavoriteValueChange)="seeFavourites($event)"></app-search-form>
+   </div>
+  <div class="content" gdArea="content">
+      <app-list-item [items]="cocktails"></app-list-item>
 
+      
 
-<app-search-form [searchTypes]="searchTypes" [searchType]="searchType" [categoriesFilter]="categoriesFilter" [selectedCategory]="selectedCategory" [alcoholicFilter]="alcoholicFilter" [selectedAlcoholicFilter]="selectedAlcoholicFilter" (optionButtonValueChange)="onSearchTypeChange($event)" (searchValueChange)="onSearchChange($event)" (alcoholicSelectValueChange)="alcoholicFilterChange($event)" (categorySelectValueChange)="categoryFilterChange($event)" (isFavoriteValueChange)="seeFavourites($event)"></app-search-form>
-<mat-divider></mat-divider>
+  </div>
+</div>
 
-<app-list-item [items]="cocktails"></app-list-item>

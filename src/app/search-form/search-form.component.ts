@@ -38,6 +38,7 @@ export class SearchFormComponent implements OnInit {
   }
 
   seeFavourites(favoriteChecked: boolean){
+    this.favoriteChecked = favoriteChecked;
     this.isFavoriteValueChange.emit(favoriteChecked);
   }
 

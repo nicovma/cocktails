@@ -1,5 +1,10 @@
-<mat-grid-list rowHeight="2:1" cols="2">
-    <mat-grid-tile *ngFor="let item of items">
-        <app-item-card mat-grid-tile [cocktail]="item"></app-item-card>
-    </mat-grid-tile>
-</mat-grid-list>
+<div
+  fxLayout="row wrap" 
+  fxLayout.lt-sm="column" 
+  fxLayoutGap="8px" 
+  fxLayoutAlign="flex-start">
+<ng-container *ngFor="let item of items">
+    <app-item-card class="item-card" fxFlex="0 1 calc(33.3% - 8px)" fxFlex.lt-md="0 1 calc(50% - 8px)"
+    fxFlex.lt-sm="100%" mat-grid-tile [cocktail]="item"></app-item-card>
+</ng-container>
+</div>

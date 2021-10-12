@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { mergeMap } from 'rxjs/operators';
 import { Cocktail } from '../intefaces/Cocktail';
 import { CocktailService } from '../services/cocktail/cocktail.service';
+import { LocalStorageService } from '../services/local-storage/local-storage.service';
 
 @Component({
   selector: 'app-cocktails',
@@ -19,9 +20,6 @@ export class CocktailComponent implements OnInit {
   searchTypes: string[] = ['Name','Ingredients'];
 
   searchType: string = this.searchTypes[0];
-
-  // Favourite list Variables
-  favoriteChecked: boolean = false;
   
   // Filter variables
   categoriesFilter: string[] = ['All'];
@@ -30,7 +28,8 @@ export class CocktailComponent implements OnInit {
   alcoholicFilter: string[] = ['All','Alcoholic', 'Non_Alcoholic'];
   selectedAlcoholicFilter: string = this.alcoholicFilter[0];
 
-  constructor(private cocktailService:CocktailService ) {   
+  constructor(private cocktailService:CocktailService, private localStorageService: LocalStorageService) {
+
   }
 
   ngOnInit(): void {
@@ -52,7 +51,6 @@ export class CocktailComponent implements OnInit {
   }
 
   onSearchTypeChange(searchType: string){
-    console.log(searchType);
     this.searchType = searchType;
     this.getCocktailsBySearchValue();
   }
@@ -91,8 +89,14 @@ export class CocktailComponent implements OnInit {
   }
 
   seeFavourites(seeFavourites: boolean){
-    console.log(seeFavourites);
-    // Obtener del localStorage
+    if(seeFavourites){
+      this.selectedCategory = this.categoriesFilter[0];
+      this.searchValue = '';
+      this.selectedAlcoholicFilter = this.alcoholicFilter[0];
+      // Obtener del localStorage
+    } else {
+      this.getCocktailsBySearchValue();
+    }
   }
 
   onSearchChange(value: string){

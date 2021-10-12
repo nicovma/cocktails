@@ -27,7 +27,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { LoaderComponent } from './loader/loader.component';
 
 
 
@@ -41,7 +42,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MenuComponent,
     OptionButtonComponent,
     OptionSelectComponent,
-    SearchFormComponent
+    SearchFormComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +62,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatOptionModule,
     MatSelectModule,
     FlexLayoutModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatProgressSpinnerModule
   ],
   providers: [CocktailService],
   bootstrap: [AppComponent]
