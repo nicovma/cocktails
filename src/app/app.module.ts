@@ -26,6 +26,7 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 
@@ -47,7 +48,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatRadioModule,
     MatInputModule,
     FormsModule,
     MatCardModule,
@@ -59,7 +59,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatFormFieldModule,
     MatOptionModule,
     MatSelectModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatCheckboxModule
   ],
   providers: [CocktailService],
   bootstrap: [AppComponent]

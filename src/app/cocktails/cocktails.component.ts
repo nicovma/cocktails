@@ -21,7 +21,7 @@ export class CocktailComponent implements OnInit {
   searchType: string = this.searchTypes[0];
 
   // Favourite list Variables
-  isFavorite: boolean = false;
+  favoriteChecked: boolean = false;
   
   // Filter variables
   categoriesFilter: string[] = ['All'];
@@ -52,6 +52,7 @@ export class CocktailComponent implements OnInit {
   }
 
   onSearchTypeChange(searchType: string){
+    console.log(searchType);
     this.searchType = searchType;
     this.getCocktailsBySearchValue();
   }
@@ -89,9 +90,14 @@ export class CocktailComponent implements OnInit {
     // loading off
   }
 
-  onSearchChange(){
+  seeFavourites(seeFavourites: boolean){
+    console.log(seeFavourites);
+    // Obtener del localStorage
+  }
+
+  onSearchChange(value: string){
+    this.searchValue = value;
     // loading on
-    console.log('search '+this.searchValue);
     if (this.searchType === 'Name'){
       this.getCocktailsBySearchValue();
     } else {
