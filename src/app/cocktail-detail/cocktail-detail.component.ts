@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { Cocktail } from '../intefaces/Cocktail';
+import { CocktailDetail } from '../intefaces/Cocktail';
 import { CocktailService } from '../services/cocktail/cocktail.service';
 
 @Component({
@@ -10,7 +10,8 @@ import { CocktailService } from '../services/cocktail/cocktail.service';
   styleUrls: ['./cocktail-detail.component.css']
 })
 export class CocktailDetailComponent implements OnInit {
-  cocktail: Cocktail | undefined;
+  cocktail: CocktailDetail | undefined;
+  isFavorite: boolean = false;
   constructor(private activatedRoute: ActivatedRoute, private cocktailService: CocktailService, private location: Location) { }
 
   ngOnInit(): void {
@@ -19,6 +20,10 @@ export class CocktailDetailComponent implements OnInit {
       .subscribe( cocktail => {
         this.cocktail = cocktail.drinks[0];
       });
+  }
+
+  onTouchFavorite(){
+    //Agregar o sacar de favoritos
   }
 
   goBack(): void {

@@ -1,8 +1,33 @@
-<div *ngIf="cocktail">
+<div class="container" *ngIf="cocktail">
 
-  <h2>{{cocktail.strDrink | uppercase}} Details</h2>
-  <div><span>id: </span>{{cocktail.idDrink}}</div>
-  <div><span>name: </span>{{cocktail.strDrink}}</div>
+  <div class="image-container">
+    <img src="{{cocktail.strDrinkThumb}}/preview">
+  </div>
+
+  <div class="parent layout"
+        fxLayout="row">
+       <div fxFlex="80%">
+        <h2>{{cocktail.strDrink | uppercase}} Details</h2>
+       </div>
+       <div class="favorite-icon" fxFlex="20%">
+        <mat-icon>favorite</mat-icon>
+        </div>
+  </div>
+  <div>
+    <div> <mat-icon>local_bar</mat-icon> <span class="cocktail-type"> {{cocktail.strAlcoholic | uppercase}}</span></div>
+  </div>
+  <div>
+    <div><span>GLASS: {{cocktail.strGlass | uppercase}} </span></div>
+  </div>
+
+  <div>
+    <div><span>CATEGORY: {{cocktail.strCategory | uppercase}} </span></div>
+  </div>
+  
+
+  <span *ngFor=""></span>
+  
+
 
   <button (click)="goBack()">Volver</button>
 

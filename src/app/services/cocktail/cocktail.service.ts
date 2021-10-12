@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CocktailAPIResponse, CocktailCategoriesAPIResponse, IngredientAPIResponse } from 'src/app/intefaces/Cocktail';
+import { CocktailAPIResponse, CocktailCategoriesAPIResponse, CocktailDetailAPIResponse, IngredientAPIResponse } from 'src/app/intefaces/Cocktail';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, mergeMap, tap } from 'rxjs/operators';
@@ -23,8 +23,8 @@ export class CocktailService {
     return this.http.get<CocktailAPIResponse>(`${this.cocktaillUrl}/search.php?s=${name}`);
   }
 
-  getCocktailById(id: string): Observable<CocktailAPIResponse> {
-    return this.http.get<CocktailAPIResponse>(`${this.cocktaillUrl}/lookup.php?i=${id}`);
+  getCocktailById(id: string): Observable<CocktailDetailAPIResponse> {
+    return this.http.get<CocktailDetailAPIResponse>(`${this.cocktaillUrl}/lookup.php?i=${id}`);
   }
 
   getCocktailCategories(): Observable<CocktailCategoriesAPIResponse> {

@@ -1,6 +1,6 @@
 <mat-card class="example-card" *ngIf="cocktail" [routerLink]="['/detail', cocktail.idDrink]">
     <mat-card-title-group>
-      <img mat-card-md-image src={{cocktail.strDrinkThumb}} >
+      <img mat-card-md-image class="item-image" src={{cocktail.strDrinkThumb}} >
       <mat-card-title>{{cocktail.strDrink}}</mat-card-title>
       <mat-card-subtitle>Medium</mat-card-subtitle>
     </mat-card-title-group>

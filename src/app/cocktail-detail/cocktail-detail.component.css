@@ -1,0 +1,16 @@
+.container{
+    max-width: 250px;
+    margin: 32px 32px;
+}
+
+.favorite-icon{
+    text-align: end;
+}
+
+.cocktail-type{
+    vertical-align: super;
+}
+.image-container{
+    text-align: center;
+
+}
