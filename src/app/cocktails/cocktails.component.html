@@ -1,6 +1,6 @@
 <div class="parent layout"
         fxLayout="row"
-         fxLayout.sm="column" >
+         fxLayout.lt-md="column">
        <div fxFlex="25%">
          <app-search-form [searchTypes]="searchTypes" [searchType]="searchType" [categoriesFilter]="categoriesFilter" [selectedCategory]="selectedCategory" [alcoholicFilter]="alcoholicFilter" [selectedAlcoholicFilter]="selectedAlcoholicFilter" (optionButtonValueChange)="onSearchTypeChange($event)" (searchValueChange)="onSearchChange($event)" (alcoholicSelectValueChange)="alcoholicFilterChange($event)" (categorySelectValueChange)="categoryFilterChange($event)" (isFavoriteValueChange)="seeFavourites($event)"></app-search-form>
        </div>
